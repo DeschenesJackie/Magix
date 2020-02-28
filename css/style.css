@@ -13,6 +13,7 @@
 }
 
 #loginPlayArea {
+	position: relative;
 	background-image: url("../image/heros.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -20,8 +21,33 @@
 	width: 600px;
 	margin: auto;
 	margin-top: calc(50vh - 200px);
+	border: solid;
+	border-width: 4px;
+	border-color: #A18E73;
 }
 
 .form-input {
 	margin-bottom: 5px;
+}
+
+input {
+	background-color: #0A0101;
+	padding: 5px;
+	border-width: 3px;
+	border-color: #A18E73;
+}
+
+button {
+	border-width: 3px;
+	border-color: #A18E73;
+	color: #0A0101;
+	background-color: rgb(175, 156, 130);
+}
+
+.zoneEntre {
+	width: 200px;
+	margin: auto;
+	position: absolute;
+	left: 200px;
+	bottom: 50px;
 }
