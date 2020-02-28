@@ -18,7 +18,7 @@ require_once("partial/header.php");
 					<label for="password">Mot de passe : </label>
 				</div>
 				<div class="form-input">
-					<input type="text" mame="password" id="password" />
+					<input type="password" mame="password" id="password" />
 				</div>
 				<div class="form-input">
 					<button type="submit">se Connecter</button>
