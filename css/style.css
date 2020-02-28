@@ -1,0 +1,27 @@
+@font-face {
+	font-family: 'Diablo Heavy';
+	font-style: normal;
+	font-weight: normal;
+	src: local('Diablo Heavy'), url('font/diablo.woff') format('woff');
+	}
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Diablo Heavy';
+	color: #A18E73;
+}
+
+#loginPlayArea {
+	background-image: url("../image/heros.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 400px;
+	width: 600px;
+	margin: auto;
+	margin-top: calc(50vh - 200px);
+}
+
+.form-input {
+	margin-bottom: 5px;
+}
