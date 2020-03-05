@@ -30,6 +30,10 @@ require_once("partial/header.php");
 			</form>
 		</div>
 	</div>
+	<script src="js/TiledImage.js"></script>
+	<script src="js/sprite/shaman.js"></script>
+	<script src="js/animation.js"></script>
+	<canvas id="canvas"></canvas>
 </main>
 
 

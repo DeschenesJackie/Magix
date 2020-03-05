@@ -13,14 +13,14 @@
 }
 
 #loginPlayArea {
-	position: relative;
+	position: absolute;
 	background-image: url("../image/heros.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	height: 400px;
 	width: 600px;
-	margin: auto;
-	margin-top: calc(50vh - 200px);
+	left: calc(50vw - 300px);
+	top: calc(50vh - 200px);
 	border: solid;
 	border-width: 4px;
 	border-color: #A18E73;
