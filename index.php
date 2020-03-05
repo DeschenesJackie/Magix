@@ -1,4 +1,8 @@
 <?php
+require_once("action/indexAction.php");
+
+	$action = new indexAction();
+	$data = $action->execute();
 
 $titre = "Magix - Login";
 require_once("partial/header.php");
@@ -12,13 +16,13 @@ require_once("partial/header.php");
 					<label for="username">Nom d'usager : </label>
 				</div>
 				<div class="form-input">
-					<input type="text" mame="username" id="username" />
+					<input type="text" name="username" id="username" />
 				</div>
 				<div class="form-label">
 					<label for="password">Mot de passe : </label>
 				</div>
 				<div class="form-input">
-					<input type="password" mame="password" id="password" />
+					<input type="password" name="password" id="password" />
 				</div>
 				<div class="form-input">
 					<button type="submit">se Connecter</button>
