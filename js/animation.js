@@ -6,11 +6,14 @@ window.addEventListener("load", () => {
 	ctx = canvas.getContext("2d");
 	canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-	spriteList.push(new Shaman(100, 100, 7))
+	spriteList.push(new Shaman(100, 100, 7));
+
+	tick();
 });
 
 const tick = () => {
-	ctx.fillStyle = "green";
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
+
 	for (let i = 0; i < spriteList.length; i++) {
 		spriteList[i].tick();
 	}

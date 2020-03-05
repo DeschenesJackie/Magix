@@ -53,6 +53,9 @@ class Shaman {
 		this.nX = this.x + this.speedX;
 		this.nY = this.y + this.speedY;
 
+		this.x = this.nX;
+		this.y = this.nY;
+
 		this.sprite.tick(ctx, this.x, this.y)
 
 		return true;
