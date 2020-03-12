@@ -58,6 +58,13 @@ button {
 	left: 0;
 }
 
+.BoutonImage {
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	left: 50%;
+}
+
 canvas {
 	background-image: url("../image/backgroundMenu.png");
 }
