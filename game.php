@@ -8,6 +8,7 @@
 	require_once("partial/header.php");
 ?>
 
+<script src="js/jquery.js"></script>
 <script src="js/game.js"></script>
 
 <?php
