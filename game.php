@@ -11,5 +11,7 @@
 <script src="js/jquery.js"></script>
 <script src="js/game.js"></script>
 
+
+
 <?php
 	require_once("partial/footer.php");
