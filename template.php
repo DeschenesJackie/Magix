@@ -3,7 +3,11 @@
 	require_once("partial/header.php");
 ?>
 <div class="carte">
-
+	<div class="CarteSurface"></div>
+	<img class="zoneSprite" src="image/Andariel_(Diablo_II).gif" alt="Image du monstre">
+	<div class="zoneMechanic">Taunt</div>
+	<div class="zoneVie">5</div>
+	<div class="zoneAttaque">6</div>
 </div>
 
 
