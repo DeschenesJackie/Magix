@@ -19,6 +19,17 @@
 
 				$result = parent::callAPI("games/auto-match", $data);
 			}
+			if (isset($_GET["disconnect"])) {
+				$data=[];
+				$data["key"]=$_SESSION["key"];
+				$result = parent::callAPI("signout", $data);
+				if ($result === "SIGNED_OUT") {
+					session_unset();
+					session_destroy();
+					session_start();
+					header("location:index.php");
+				}
+			}
 
 			if ($result==="JOINED_TRAINING" || $result==="JOINED_PVP" || $result==="CREATED_PVP") {
 				header("location:game.php");

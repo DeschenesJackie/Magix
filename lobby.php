@@ -4,14 +4,14 @@
 	$action = new lobbyAction();
 	$data = $action->execute();
 
-	$titre = "Lobby";
+	$titre = "Magix - Lobby";
 	require_once("partial/header.php");
 ?>
-<a href="?pratique=true">
+<a class="BoutonPratique" href="?pratique=true">
 	<img src="image/heros.jpg" class="BoutonImage"></img>
 </a>
-<a href="?pratique=true">
-	<img src="image/heros.jpg" class="BoutonImage"></img>
+<a class="BoutonDisconnect" href="?disconnect=true">
+	<img src="image/heros.jpg" class="BoutonImage">PATATE</img>
 </a>
 <div class="ZoneChat">
 	<iframe style="width:600px;height:240px;"

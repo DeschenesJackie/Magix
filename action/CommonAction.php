@@ -12,12 +12,6 @@
 		}
 
 		public function execute() {
-			if (isset($_GET["logout"])) {
-				session_unset();
-				session_destroy();
-				session_start();
-			}
-
 			if ($this->visibility > CommonAction::$VISIBILITY_PUBLIC) {
 				if (!isset($_SESSION["key"])) {
 					header("location:index.php");
