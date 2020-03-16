@@ -2,13 +2,16 @@
 	$titre = "Magix - Template";
 	require_once("partial/header.php");
 ?>
-<div class="carte">
-	<div class="CarteSurface"></div>
-	<img class="zoneSprite" src="image/carteMonster/andariel.gif" alt="Image du monstre">
-	<div class="zoneMechanic">Taunt</div>
-	<div class="zoneVie">5</div>
-	<div class="zoneAttaque">6</div>
-</div>
+
+<template id="template-carte">
+	<div class="carte">
+		<div class="CarteSurface"></div>
+		<img class="zoneSprite" src="" alt="Image du monstre">
+		<div class="zoneMechanic"></div>
+		<div class="zoneVie"></div>
+		<div class="zoneAttaque"></div>
+	</div>
+</template>
 
 
 <?php

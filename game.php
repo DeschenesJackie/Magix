@@ -11,7 +11,21 @@
 <script src="js/jquery.js"></script>
 <script src="js/game.js"></script>
 
+<div id="zoneMain"></div>
 
+<div id="zoneJoueur"></div>
+
+<div id="zoneOpponent"></div>
+
+<template id="template-carte">
+	<div class="carte">
+		<div class="CarteSurface"></div>
+		<img class="zoneSprite" src="" alt="Image du monstre">
+		<div class="zoneMechanic"></div>
+		<div class="zoneVie"></div>
+		<div class="zoneAttaque"></div>
+	</div>
+</template>
 
 <?php
 	require_once("partial/footer.php");
