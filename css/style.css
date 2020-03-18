@@ -114,6 +114,12 @@ canvas {
 	top: 12%;
 }
 
+.zoneCost {
+	top: 0;
+	right: 4%;
+	position: absolute;
+}
+
 .zoneUID {
 	display: none;
 }
@@ -137,7 +143,7 @@ canvas {
 	height: 184px;
 	width: 60%;
 	position: absolute;
-	top: 60%;
+	top: 50%;
 	left: 15%;
 }
 

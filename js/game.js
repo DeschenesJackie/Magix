@@ -1,3 +1,5 @@
+var carteJoeurUID = -1;
+
 function state() {
 	$.ajax({
 		url : "ajax-state.php",
@@ -7,12 +9,27 @@ function state() {
 	var reponse = JSON.parse(msg);
 
 	if (typeof reponse !== "object") {
+		console.log(reponse);
 		if (reponse == "GAME_NOT_FOUND") {
 				// Fin de la partie. Est-ce que j’ai gagné? Je dois appeler user-info
 		}
 	}
 	else {
-		document.getElementById("zoneMain").innerHTML = "";
+		displayGame(reponse);
+	}
+
+
+	setTimeout(state, 1000); // Attendre 1 seconde avant de relancer l’appel
+	})
+}
+
+window.addEventListener("load", () => {
+setTimeout(state, 1000); // Appel initial (attendre 1 seconde)
+
+});
+
+function displayGame(reponse) {
+	document.getElementById("zoneMain").innerHTML = "";
 		for (i in reponse.hand) {
 			var carte = reponse.hand[i];
 			var div = getCarte(carte);
@@ -30,23 +47,53 @@ function state() {
 			document.getElementById("zoneOpponent").appendChild(getCarte(carte));
 		}
 		console.log(reponse.hp, reponse.mp);
-		// maVariable est un objet. On pourrait faire, par exemple, maVariable.game.hp ou
-		// maVariable.player.mp
+}
+
+function carteMainClicked() {
+	carteJoeurUID = -1;
+	console.log("carteCliquer");
+	$.ajax({
+		url: "ajax-game.php",
+		type: "POST",
+		data: {
+			UID : this.querySelector(".zoneUID").innerHTML
+		}
+	})
+	.done(function (msg) {
+	var reponse = JSON.parse(msg); // reponse est le message de retour de la fonction
+	if (typeof reponse !== "object") {
+		console.log(reponse);
 	}
-
-
-	setTimeout(state, 1000); // Attendre 1 seconde avant de relancer l’appel
+	else {
+		displayGame(reponse);
+	}
 	})
 }
 
-window.addEventListener("load", () => {
-setTimeout(state, 1000); // Appel initial (attendre 1 seconde)
+function carteOpponentClicked() {
+	if (carteJoeurUID != -1) {
+		$.ajax({
+			url: "ajax-game.php",
+			type: "POST",
+			data: {
+				UID : carteJoeurUID,
+				targetUID : this.querySelector(".zoneUID").innerHTML
+			}
+		})
+		.done(function (msg) {
+		var reponse = JSON.parse(msg); // reponse est le message de retour de la fonction
+		if (typeof reponse !== "object") {
+			console.log(reponse);
+		}
+		else {
+			displayGame(reponse);
+		}
+		})
+	}
+}
 
-});
-
-function carteMainClicked() {
-	console.log(this.querySelector(".zoneUID").innerHTML);
-
+function carteJoueurClicked() {
+	carteJoeurUID = this.querySelector(".zoneUID").innerHTML;
 }
 
 function getCarte(carte) {
@@ -58,6 +105,7 @@ function getCarte(carte) {
 			div.querySelector(".zoneAttaque").innerHTML = carte.atk;
 			div.querySelector(".zoneMechanic").innerHTML = carte.mechanics;
 			div.querySelector(".zoneSprite").src = getImage(carte.id);
+			div.querySelector(".zoneCost").innerHTML = carte.cost;
 			div.querySelector(".zoneUID").innerHTML = carte.uid;
 	return div
 }
