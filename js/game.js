@@ -39,19 +39,22 @@ function displayGame(reponse) {
 		document.getElementById("zoneJoueur").innerHTML = "";
 		for (i in reponse.board) {
 			var carte = reponse.board[i];
-			document.getElementById("zoneJoueur").appendChild(getCarte(carte));
+			var div = getCarte(carte);
+			div.onclick = carteJoueurClicked;
+			document.getElementById("zoneJoueur").appendChild(div);
 		}
 		document.getElementById("zoneOpponent").innerHTML = "";
 		for (i in reponse.opponent.board) {
 			var carte = reponse.opponent.board[i];
-			document.getElementById("zoneOpponent").appendChild(getCarte(carte));
+			var div = getCarte(carte);
+			div.onclick = carteOpponentClicked;
+			document.getElementById("zoneOpponent").appendChild(div);
 		}
 		console.log(reponse.hp, reponse.mp);
 }
 
 function carteMainClicked() {
 	carteJoeurUID = -1;
-	console.log("carteCliquer");
 	$.ajax({
 		url: "ajax-game.php",
 		type: "POST",
