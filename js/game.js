@@ -15,7 +15,9 @@ function state() {
 		document.getElementById("zoneMain").innerHTML = "";
 		for (i in reponse.hand) {
 			var carte = reponse.hand[i];
-			document.getElementById("zoneMain").appendChild(getCarte(carte));
+			var div = getCarte(carte);
+			div.onclick = carteMainClicked;
+			document.getElementById("zoneMain").appendChild(div);
 		}
 		document.getElementById("zoneJoueur").innerHTML = "";
 		for (i in reponse.board) {
@@ -42,6 +44,11 @@ setTimeout(state, 1000); // Appel initial (attendre 1 seconde)
 
 });
 
+function carteMainClicked() {
+	console.log(this.querySelector(".zoneUID").innerHTML);
+
+}
+
 function getCarte(carte) {
 	let html = document.getElementById("template-carte").innerHTML;
 	let div = document.createElement("div");
@@ -51,6 +58,7 @@ function getCarte(carte) {
 			div.querySelector(".zoneAttaque").innerHTML = carte.atk;
 			div.querySelector(".zoneMechanic").innerHTML = carte.mechanics;
 			div.querySelector(".zoneSprite").src = getImage(carte.id);
+			div.querySelector(".zoneUID").innerHTML = carte.uid;
 	return div
 }
 

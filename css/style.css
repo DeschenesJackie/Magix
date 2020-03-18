@@ -114,7 +114,12 @@ canvas {
 	top: 12%;
 }
 
+.zoneUID {
+	display: none;
+}
+
 /* FIN DE TEMPLATE CARTE */
+
 
 #zoneMain {
 	display: flex;
@@ -136,6 +141,10 @@ canvas {
 	left: 15%;
 }
 
+#zoneMainOpponent {
+	display: flex;
+}
+
 #zoneOpponent {
 	display: flex;
 	justify-content: space-around;
@@ -144,4 +153,11 @@ canvas {
 	position: absolute;
 	top: 15%;
 	left: 15%;
+}
+
+#Board {
+	background-image: url("../image/board.jpg");
+	background-size: cover;
+	width: 100vw;
+	height: 100vh;
 }
