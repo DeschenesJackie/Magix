@@ -12,6 +12,9 @@
 <script src="js/game.js"></script>
 
 <div id="Board">
+	<div id="vieJoueur"><p class="vie">30</p></div>
+	<div id="manaJoueur"><p class="mana">1</p></div>
+
 	<div id="zoneMainOpponent"></div>
 
 	<div id="zoneMain"></div>

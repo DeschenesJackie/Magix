@@ -93,7 +93,7 @@ canvas {
 
 .zoneVie {
 	position: absolute;
-	right: 5%;
+	right: 10%;
 	bottom: 7%;
 	font-size: 16px;
 }
@@ -164,6 +164,41 @@ canvas {
 #Board {
 	background-image: url("../image/board.jpg");
 	background-size: cover;
+	position: relative;
 	width: 100vw;
 	height: 100vh;
+}
+
+#vieJoueur {
+	background-image: url("../image/life.PNG");
+	background-size: cover;
+	position: absolute;
+	width: 11vw;
+	height: 9vw;
+	bottom: 0;
+	left: 0;
+}
+
+#vieJoueur>p {
+	position: absolute;
+	bottom: 4.5vw;
+	left: 5.5vw;
+	font-size: 32px;
+}
+
+#manaJoueur {
+	background-image: url("../image/mana.PNG");
+	background-size: cover;
+	position: absolute;
+	width: 10vw;
+	height: 10vw;
+	bottom: 0;
+	right: 0;
+}
+
+#manaJoueur>p {
+	position: absolute;
+	bottom: 4.5vw;
+	right: 4.5vw;
+	font-size: 32px;
 }

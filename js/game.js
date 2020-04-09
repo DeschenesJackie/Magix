@@ -30,6 +30,9 @@ setTimeout(state, 1000); // Appel initial (attendre 1 seconde)
 
 function displayGame(reponse) {
 	document.getElementById("zoneMain").innerHTML = "";
+	document.getElementById("manaJoueur").querySelector(".mana").innerHTML = reponse.mp;
+	document.getElementById("vieJoueur").querySelector(".vie").innerHTML = reponse.hp;
+
 		for (i in reponse.hand) {
 			var carte = reponse.hand[i];
 			var div = getCarte(carte);
@@ -103,8 +106,7 @@ function getCarte(carte) {
 	let html = document.getElementById("template-carte").innerHTML;
 	let div = document.createElement("div");
 			div.innerHTML = html;
-			var vie = carte.hp + "/" + carte.baseHP;
-			div.querySelector(".zoneVie").innerHTML = vie;
+			div.querySelector(".zoneVie").innerHTML = carte.hp;
 			div.querySelector(".zoneAttaque").innerHTML = carte.atk;
 			div.querySelector(".zoneMechanic").innerHTML = carte.mechanics;
 			div.querySelector(".zoneSprite").src = getImage(carte.id);
