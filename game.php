@@ -40,6 +40,8 @@
 	<div id="zoneJoueur"></div>
 
 	<div id="zoneOpponent"></div>
+
+	<div id="zoneTimer"></div>
 </div>
 
 <template id="template-carte">

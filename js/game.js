@@ -36,6 +36,7 @@ window.addEventListener("load", () => {
 function displayGame(reponse) {
 	document.getElementById("zoneMain").innerHTML = "";
 	document.getElementById("zoneMainOpponent").innerHTML = "";
+	document.getElementById("zoneTimer").innerHTML = reponse.remainingTurnTime;
 	document.getElementById("SERVER_MESSAGE").style.display = "none";
 	document.getElementById("portraitOpponent").style.backgroundImage= 'url(' + getImagePortrait(reponse.opponent.heroClass) + ')';
 	document.getElementById("portrait").src = getImagePortrait(reponse.heroClass);

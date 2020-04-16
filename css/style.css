@@ -224,6 +224,17 @@ canvas {
 	height: 1.5vw;
 }
 
+#zoneTimer {
+	background-image: url("../image/greyTexture.PNG");
+	position: absolute;
+	right: 0;
+	bottom: 9vw;
+	width: 4vw;
+	height: 4vw;
+	font-size: 60px;
+	text-align: center;
+}
+
 #portrait {
 	background-image: url("../image/greyTexture.PNG");
 	position: absolute;
