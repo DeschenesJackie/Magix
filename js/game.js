@@ -10,8 +10,11 @@ function state() {
 
 	if (typeof reponse !== "object") {
 		console.log(reponse);
-		if (reponse == "GAME_NOT_FOUND") {
-				// Fin de la partie. Est-ce que j’ai gagné? Je dois appeler user-info
+		document.getElementById("WAITING").style.display = "none";
+		document.getElementById("SERVER_MESSAGE").innerHTML = reponse;
+		document.getElementById("SERVER_MESSAGE").style.display = "block";
+		if (reponse == "WAITING") {
+			document.getElementById("WAITING").style.display = "block";
 		}
 	}
 	else {
@@ -32,6 +35,9 @@ window.addEventListener("load", () => {
 
 function displayGame(reponse) {
 	document.getElementById("zoneMain").innerHTML = "";
+	document.getElementById("SERVER_MESSAGE").style.display = "none";
+	document.getElementById("portraitOpponent").style.backgroundImage= 'url(' + getImagePortrait(reponse.opponent.heroClass) + ')';
+	document.getElementById("portrait").src = getImagePortrait(reponse.heroClass);
 	document.getElementById("manaJoueur").querySelector(".mana").innerHTML = reponse.mp;
 	document.getElementById("vieJoueur").querySelector(".vie").innerHTML = reponse.hp;
 	document.getElementById("manaOpponent").querySelector(".mana").innerHTML = reponse.opponent.mp;
@@ -74,6 +80,8 @@ function carteMainClicked() {
 	var reponse = JSON.parse(msg); // reponse est le message de retour de la fonction
 	if (typeof reponse !== "object") {
 		console.log(reponse);
+		document.getElementById("SERVER_MESSAGE").innerHTML = reponse;
+		document.getElementById("SERVER_MESSAGE").style.display = "block";
 	}
 	else {
 		displayGame(reponse);
@@ -95,6 +103,8 @@ function carteOpponentClicked() {
 		var reponse = JSON.parse(msg); // reponse est le message de retour de la fonction
 		if (typeof reponse !== "object") {
 			console.log(reponse);
+			document.getElementById("SERVER_MESSAGE").innerHTML = reponse;
+			document.getElementById("SERVER_MESSAGE").style.display = "block";
 		}
 		else {
 			displayGame(reponse);
@@ -133,6 +143,8 @@ function heroPower() {
 	var reponse = JSON.parse(msg); // reponse est le message de retour de la fonction
 	if (typeof reponse !== "object") {
 		console.log(reponse);
+		document.getElementById("SERVER_MESSAGE").innerHTML = reponse;
+		document.getElementById("SERVER_MESSAGE").style.display = "block";
 	}
 	else {
 		displayGame(reponse);
@@ -153,11 +165,43 @@ function passTurn() {
 	var reponse = JSON.parse(msg); // reponse est le message de retour de la fonction
 	if (typeof reponse !== "object") {
 		console.log(reponse);
+		document.getElementById("SERVER_MESSAGE").innerHTML = reponse;
+		document.getElementById("SERVER_MESSAGE").style.display = "block";
 	}
 	else {
 		displayGame(reponse);
 	}
 	})
+}
+
+function getImagePortrait(name) {
+	var path;
+	if (name === "Druid") {
+		path = "image/portrait/Druid.gif";
+	}
+	else if (name === "Hunter") {
+		path = "image/portrait/Hunter.gif";
+	}
+	else if (name === "Paladin") {
+		path = "image/portrait/Paladin.gif";
+	}
+	else if (name === "Priest") {
+		path = "image/portrait/Priest.gif";
+	}
+	else if (name === "Rogue") {
+		path = "image/portrait/Rogue.gif";
+	}
+	else if (name === "Shaman") {
+		path = "image/portrait/Shaman.gif";
+	}
+	else if (name === "Warlock") {
+		path = "image/portrait/Warlock.gif";
+	}
+	else {
+		path = "image/portrait/Warrior.gif";
+	}
+
+	return path;
 }
 
 function getImage(id) {

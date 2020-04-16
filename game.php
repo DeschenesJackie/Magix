@@ -12,10 +12,13 @@
 <script src="js/game.js"></script>
 
 <div id="Board">
+	<div id="SERVER_MESSAGE"></div>
+	<div id="WAITING"></div>
+
 	<div id="vieJoueur"><p class="vie">30</p></div>
 	<div id="manaJoueur"><p class="mana">1</p></div>
 
-	<div id="portrait"></div>
+	<img id="portrait" src="" alt="Portrait du Hero Joueur">
 	<div id="actionZone">
 		<button class="hp">Hero Power</button>
 		<button class="pass">Passer</button>

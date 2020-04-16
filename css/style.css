@@ -134,7 +134,7 @@ canvas {
 	width: 50%;
 	position: absolute;
 	bottom: 5%;
-	left: 15%;
+	left: 20%;
 }
 
 #zoneJoueur {
@@ -276,8 +276,27 @@ canvas {
 #portraitOpponent {
 	background-color: black;
 	position: absolute;
+	background-size: cover;
 	width: 7vw;
-	height: 7vw;
+	height: 6vw;
 	left: 1.5vw;
-	top: 1vw;
+	top: 1.5vw;
+}
+
+#SERVER_MESSAGE {
+	display: none;
+	padding-top: 40vh;
+	text-align: center;
+	font-size: 42px;
+	color: black;
+}
+
+#WAITING {
+	display: none;
+	background-image: url("../image/waiting.gif");
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
 }
