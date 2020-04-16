@@ -21,6 +21,10 @@
 					$data["uid"] = $_POST["UID"];
 					$data["targetuid"] = $_POST["targetUID"];
 				}
+				elseif (isset($_POST["action"])) {
+					$data["type"] = $_POST["action"];
+				}
+
 				$result=parent::callAPI("games/action", $data);
 			}
 

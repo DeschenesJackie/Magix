@@ -24,14 +24,19 @@ function state() {
 }
 
 window.addEventListener("load", () => {
-setTimeout(state, 1000); // Appel initial (attendre 1 seconde)
-
+	document.getElementById("actionZone").querySelector(".hp").onclick = heroPower;
+	document.getElementById("actionZone").querySelector(".pass").onclick = passTurn;
+	document.getElementById("portraitOpponent").onclick = carteOpponentClicked;
+	setTimeout(state, 1000); // Appel initial (attendre 1 seconde)
 });
 
 function displayGame(reponse) {
 	document.getElementById("zoneMain").innerHTML = "";
 	document.getElementById("manaJoueur").querySelector(".mana").innerHTML = reponse.mp;
 	document.getElementById("vieJoueur").querySelector(".vie").innerHTML = reponse.hp;
+	document.getElementById("manaOpponent").querySelector(".mana").innerHTML = reponse.opponent.mp;
+	document.getElementById("vieOpponent").querySelector(".vie").innerHTML = reponse.opponent.hp;
+	document.getElementById("idOpponent").querySelector(".id").innerHTML = reponse.opponent.username;
 
 		for (i in reponse.hand) {
 			var carte = reponse.hand[i];
@@ -112,7 +117,47 @@ function getCarte(carte) {
 			div.querySelector(".zoneSprite").src = getImage(carte.id);
 			div.querySelector(".zoneCost").innerHTML = carte.cost;
 			div.querySelector(".zoneUID").innerHTML = carte.uid;
-	return div
+	return div;
+}
+
+function heroPower() {
+	carteJoeurUID = -1;
+	$.ajax({
+		url: "ajax-game.php",
+		type: "POST",
+		data: {
+			action : "HERO_POWER"
+		}
+	})
+	.done(function (msg) {
+	var reponse = JSON.parse(msg); // reponse est le message de retour de la fonction
+	if (typeof reponse !== "object") {
+		console.log(reponse);
+	}
+	else {
+		displayGame(reponse);
+	}
+	})
+}
+
+function passTurn() {
+	carteJoeurUID = -1;
+	$.ajax({
+		url: "ajax-game.php",
+		type: "POST",
+		data: {
+			action : "END_TURN"
+		}
+	})
+	.done(function (msg) {
+	var reponse = JSON.parse(msg); // reponse est le message de retour de la fonction
+	if (typeof reponse !== "object") {
+		console.log(reponse);
+	}
+	else {
+		displayGame(reponse);
+	}
+	})
 }
 
 function getImage(id) {

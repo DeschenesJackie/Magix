@@ -131,7 +131,7 @@ canvas {
 	display: flex;
 	justify-content: space-around;
 	height: 184px;
-	width: 60%;
+	width: 50%;
 	position: absolute;
 	bottom: 5%;
 	left: 15%;
@@ -176,7 +176,7 @@ canvas {
 	width: 11vw;
 	height: 9vw;
 	bottom: 0;
-	left: 0;
+	left: 10vw;
 }
 
 #vieJoueur>p {
@@ -193,12 +193,91 @@ canvas {
 	width: 10vw;
 	height: 10vw;
 	bottom: 0;
+	right: 10vw;
+}
+
+#actionZone {
+	background-image: url("../image/greyTexture.PNG");
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	width: 10vw;
+	height: 9vw;
+	bottom: 0;
 	right: 0;
 }
+
+#actionZone>button {
+	width: 8vw;
+	height: 1.5vw;
+}
+
+#portrait {
+	background-image: url("../image/greyTexture.PNG");
+	position: absolute;
+	width: 10vw;
+	height: 8vw;
+	bottom: 0;
+	left: 0;
+}
+
+
 
 #manaJoueur>p {
 	position: absolute;
 	bottom: 4.5vw;
 	right: 4.5vw;
 	font-size: 32px;
+}
+
+#opponentInfo {
+	background-image: url("../image/greyTexture.PNG");
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 10vw;
+	height: 10vw;
+}
+
+#manaOpponent {
+	background-image: url("../image/mana.PNG");
+	background-size: cover;
+	position: absolute;
+	width: 2.5vw;
+	height: 2.5vw;
+	bottom: 0;
+	right: 0;
+}
+
+#manaOpponent>p {
+	position: absolute;
+	bottom: 1vw;
+	right: 1vw;
+}
+
+#vieOpponent {
+	background-image: url("../image/life.PNG");
+	background-size: cover;
+	position: absolute;
+	width: 2.75vw;
+	height: 2.25vw;
+	bottom: 0;
+	left: 0;
+}
+
+#vieOpponent>p {
+	position: absolute;
+	bottom: 1vw;
+	left: 1vw;
+}
+
+#portraitOpponent {
+	background-color: black;
+	position: absolute;
+	width: 7vw;
+	height: 7vw;
+	left: 1.5vw;
+	top: 1vw;
 }

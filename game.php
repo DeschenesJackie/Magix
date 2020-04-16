@@ -15,6 +15,20 @@
 	<div id="vieJoueur"><p class="vie">30</p></div>
 	<div id="manaJoueur"><p class="mana">1</p></div>
 
+	<div id="portrait"></div>
+	<div id="actionZone">
+		<button class="hp">Hero Power</button>
+		<button class="pass">Passer</button>
+	</div>
+
+	<div id="opponentInfo">
+		<div id="vieOpponent"><p class="vie">30</p></div>
+		<div id="manaOpponent"><p class="mana">1</p></div>
+		<div id="portraitOpponent"><div class="zoneUID">0</div></div>
+		<div id="idOpponent"><p class="id">Potato</p></div>
+		<div class="zoneUID"></div>
+	</div>
+
 	<div id="zoneMainOpponent"></div>
 
 	<div id="zoneMain"></div>
