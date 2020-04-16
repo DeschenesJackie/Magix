@@ -12,6 +12,13 @@
 				header("location:index.php");
 			}
 			$result=[];
+			if (isset($_GET["pvp"])) {
+				$data=[];
+				$data["key"]=$_SESSION["key"];
+				$data["type"]="PVP";
+
+				$result = parent::callAPI("games/auto-match", $data);
+			}
 			if (isset($_GET["pratique"])){
 				$data=[];
 				$data["key"]=$_SESSION["key"];
