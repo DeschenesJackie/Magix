@@ -35,6 +35,7 @@ window.addEventListener("load", () => {
 
 function displayGame(reponse) {
 	document.getElementById("zoneMain").innerHTML = "";
+	document.getElementById("zoneMainOpponent").innerHTML = "";
 	document.getElementById("SERVER_MESSAGE").style.display = "none";
 	document.getElementById("portraitOpponent").style.backgroundImage= 'url(' + getImagePortrait(reponse.opponent.heroClass) + ')';
 	document.getElementById("portrait").src = getImagePortrait(reponse.heroClass);
@@ -67,6 +68,11 @@ function displayGame(reponse) {
 			div.onclick = carteOpponentClicked;
 			if (carte.mechanics.includes("Taunt")) div.style.border = "3px solid #14626c";
 			document.getElementById("zoneOpponent").appendChild(div);
+		}
+		for (let index = 0; index < reponse.opponent.handSize; index++) {
+			let div = document.createElement("div");
+			div.style.backgroundImage = "url(image/CardBack.png)";
+			document.getElementById("zoneMainOpponent").appendChild(div);
 		}
 		console.log(reponse.hp, reponse.mp);
 }

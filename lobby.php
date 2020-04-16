@@ -7,16 +7,23 @@
 	$titre = "Magix - Lobby";
 	require_once("partial/header.php");
 ?>
-<a class="BoutonPratique" href="?pratique=true">
-	<img src="image/heros.jpg" class="BoutonImage"></img>
-</a>
-<a class="BoutonDisconnect" href="?disconnect=true">
-	<img src="image/heros.jpg" class="BoutonImage">PATATE</img>
-</a>
-<div class="ZoneChat">
-	<iframe style="width:600px;height:240px;"
-			src="https://magix.apps-de-cours.com/server/#/chat/<?= $_SESSION["key"] ?>">
-	</iframe>
+<div id="Lobby">
+	<div id="ZoneButton">
+		<a class="BoutonPartie" href="?pvp=true">
+			<button>PVP</button>
+		</a>
+		<a class="BoutonPratique" href="?pratique=true">
+			<button>Pratique</button>
+		</a>
+		<a class="BoutonDisconnect" href="?disconnect=true">
+			<button>Deconnection</button>
+		</a>
+	</div>
+	<div class="ZoneChat">
+		<iframe style="width:800px;height:240px;"
+				src="https://magix.apps-de-cours.com/server/#/chat/<?= $_SESSION["key"] ?>">
+		</iframe>
+	</div>
 </div>
 
 <?php

@@ -52,11 +52,7 @@ button {
 	bottom: 50px;
 }
 
-.ZoneChat {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-}
+
 
 .BoutonImage {
 	width: 40px;
@@ -129,7 +125,7 @@ canvas {
 
 #zoneMain {
 	display: flex;
-	justify-content: space-around;
+	justify-content: center;
 	height: 184px;
 	width: 50%;
 	position: absolute;
@@ -149,6 +145,20 @@ canvas {
 
 #zoneMainOpponent {
 	display: flex;
+	justify-content: center;
+	position: absolute;
+	top: -60px;
+	left: 20%;
+	width: 60%;
+	height: 184px;
+}
+
+#zoneMainOpponent>div {
+	width: 136px;
+	height: 184px;
+	margin: 2px;
+	background-size: cover;
+	border: #0A0101 1px solid;
 }
 
 #zoneOpponent {
@@ -299,4 +309,35 @@ canvas {
 	height: 100%;
 	top: 0;
 	left: 0;
+}
+
+/* Lobby */
+
+#Lobby {
+	background-image: url("../image/board.jpg");
+	background-size: cover;
+	width: 100vw;
+	height: 100vh;
+}
+
+#ZoneButton button {
+	width: 30vh;
+	height: 10vh;
+	font-size: 24px;
+}
+
+#ZoneButton {
+	position: absolute;
+	bottom: 50vh;
+	left: 20vw;
+	width: 60vw;
+	display: flex;
+	justify-content: space-around;
+}
+
+.ZoneChat {
+	position: absolute;
+	bottom: 10vh;
+	left: calc(50vw - 400px);
+	background-color: rgb(175, 156, 130);
 }
