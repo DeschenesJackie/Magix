@@ -22,6 +22,7 @@
 	<div id="actionZone">
 		<button class="hp">Hero Power</button>
 		<button class="pass">Passer</button>
+		<a href="?forfeit=true"><button class="forfeit">Lobby</button></a>
 	</div>
 
 	<div id="opponentInfo">

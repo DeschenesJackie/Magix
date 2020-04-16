@@ -55,6 +55,9 @@ function displayGame(reponse) {
 			var carte = reponse.board[i];
 			var div = getCarte(carte);
 			div.onclick = carteJoueurClicked;
+			if (carte.state !== "SLEEP") {
+				div.style.border = "2px solid #51ff0d";
+			}
 			document.getElementById("zoneJoueur").appendChild(div);
 		}
 		document.getElementById("zoneOpponent").innerHTML = "";
@@ -62,6 +65,7 @@ function displayGame(reponse) {
 			var carte = reponse.opponent.board[i];
 			var div = getCarte(carte);
 			div.onclick = carteOpponentClicked;
+			if (carte.mechanics.includes("Taunt")) div.style.border = "3px solid #14626c";
 			document.getElementById("zoneOpponent").appendChild(div);
 		}
 		console.log(reponse.hp, reponse.mp);

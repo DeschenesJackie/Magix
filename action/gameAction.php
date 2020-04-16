@@ -11,6 +11,9 @@
 			if (!isset($_SESSION["key"])) {
 				header("location:index.php");
 			}
+			if (isset($_GET["forfeit"])) {
+				header("location:lobby.php");
+			}
 
 
 			return [];

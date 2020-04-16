@@ -209,7 +209,7 @@ canvas {
 	right: 0;
 }
 
-#actionZone>button {
+#actionZone button {
 	width: 8vw;
 	height: 1.5vw;
 }
