@@ -14,6 +14,7 @@ function state() {
 		document.getElementById("SERVER_MESSAGE").innerHTML = reponse;
 		document.getElementById("SERVER_MESSAGE").style.display = "block";
 		if (reponse == "WAITING") {
+			document.getElementById("SERVER_MESSAGE").style.display = "none";
 			document.getElementById("WAITING").style.display = "block";
 		}
 	}
@@ -34,6 +35,7 @@ window.addEventListener("load", () => {
 });
 
 function displayGame(reponse) {
+	document.getElementById("WAITING").style.display = "none";
 	document.getElementById("zoneMain").innerHTML = "";
 	document.getElementById("zoneMainOpponent").innerHTML = "";
 	document.getElementById("zoneTimer").innerHTML = reponse.remainingTurnTime;

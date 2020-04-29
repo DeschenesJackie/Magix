@@ -8,6 +8,11 @@
 		}
 
 		protected function executeAction() {
+			$retour = [];
+			if (!empty($_COOKIE["username"])) {
+				$retour["username"]= $_COOKIE["username"];
+			}
+
 			if (!isset($_SESSION["key"])) {
 				header("location:index.php");
 			}
@@ -16,6 +21,6 @@
 			}
 
 
-			return [];
+			return $retour;
 		}
 	}

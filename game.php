@@ -11,13 +11,14 @@
 <script src="js/jquery.js"></script>
 <script src="js/game.js"></script>
 
+<img id="WAITING" src="image/waiting.gif" alt="Why">
 <div id="Board">
 	<div id="SERVER_MESSAGE"></div>
-	<div id="WAITING"></div>
 
 	<div id="vieJoueur"><p class="vie">30</p></div>
 	<div id="manaJoueur"><p class="mana">1</p></div>
 
+	<div id="usernamePartie"> <?= $data["username"] ?> </div>
 	<img id="portrait" src="" alt="Portrait du Hero Joueur">
 	<div id="actionZone">
 		<button class="hp">Hero Power</button>

@@ -14,6 +14,11 @@
 
 			$retour = [];
 			$data = [];
+
+			if (!empty($_COOKIE["username"])) {
+				$retour["username"]= $_COOKIE["username"];
+			}
+
 			if (isset($_POST["username"]) && isset($_POST["password"])) {
 				$data["username"] = $_POST["username"];
 				$data["password"] = $_POST["password"];
@@ -26,6 +31,7 @@
 				}
 				else {
 					// Pour voir les informations retournées : var_dump($result);exit;
+					setcookie("username", $_POST["username"], time() + 7200);
 					$key = $result->key;
 					$_SESSION["key"] = $key;
 					$retour["isConnected"] = true;

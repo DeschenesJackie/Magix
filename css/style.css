@@ -235,6 +235,13 @@ canvas {
 	text-align: center;
 }
 
+#usernamePartie {
+	position: absolute;
+	bottom: 8vw;
+	left: 0;
+	font-size: 24px;
+}
+
 #portrait {
 	background-image: url("../image/greyTexture.PNG");
 	position: absolute;
@@ -314,10 +321,10 @@ canvas {
 
 #WAITING {
 	display: none;
-	background-image: url("../image/waiting.gif");
 	position: absolute;
-	width: 100%;
-	height: 100%;
+	z-index: 1;
+	width: 100vw;
+	height: 100vh;
 	top: 0;
 	left: 0;
 }
@@ -329,6 +336,13 @@ canvas {
 	background-size: cover;
 	width: 100vw;
 	height: 100vh;
+}
+
+#WelcomeZone {
+	position: absolute;
+	left: 30vw;
+	top: 20vh;
+	font-size: 24px;
 }
 
 #ZoneButton button {

@@ -16,7 +16,18 @@ require_once("partial/header.php");
 					<label for="username">Nom d'usager : </label>
 				</div>
 				<div class="form-input">
-					<input type="text" name="username" id="username" />
+					<input type="text" name="username" id="username" value=<?php
+					if (!empty($data["username"])) {
+						?>
+							<?= $data["username"] ?>
+						<?php
+					}
+					else {
+						?>
+							""
+						<?php
+					}
+					?>/>
 				</div>
 				<div class="form-label">
 					<label for="password">Mot de passe : </label>

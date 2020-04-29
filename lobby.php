@@ -8,6 +8,9 @@
 	require_once("partial/header.php");
 ?>
 <div id="Lobby">
+	<div id="WelcomeZone">
+		Bienvenue sur Magix utilisateur <?= $data["username"] ?>.
+	</div>
 	<div id="ZoneButton">
 		<a class="BoutonPartie" href="?pvp=true">
 			<button>PVP</button>
